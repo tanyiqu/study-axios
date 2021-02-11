@@ -3,10 +3,7 @@ package love.tanyiqu.controller;
 import love.tanyiqu.pojo.User;
 import love.tanyiqu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +20,7 @@ public class UserController {
     }
 
 
+    @CrossOrigin
     @GetMapping("/allUsers")
     public Map<String, Object> all_get() {
         HashMap<String, Object> response = new HashMap<>();
@@ -32,6 +30,7 @@ public class UserController {
         return response;
     }
 
+    @CrossOrigin
     @GetMapping("/findById")
     public Map<String, Object> byId(Integer id) {
         HashMap<String, Object> response = new HashMap<>();
@@ -46,6 +45,7 @@ public class UserController {
         return response;
     }
 
+    @CrossOrigin
     @PostMapping("/allUsersPost")
     public Map<String, Object> all_post() {
         HashMap<String, Object> response = new HashMap<>();
@@ -55,6 +55,7 @@ public class UserController {
         return response;
     }
 
+    @CrossOrigin
     @PostMapping("/findByIdPost")
     public Map<String, Object> byId_post(Integer id) {
         HashMap<String, Object> response = new HashMap<>();
