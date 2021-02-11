@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    // 不带参数的get请求
+    axios.get('http://127.0.0.1:8866/user/allUsers').then(function (response) {
+        console.log('不带参数的get请求');
+        console.log(response);
+    }).catch(function (error) {
+        console.log('不带参数的get请求');
+        console.log(error);
+    });
+
+
+    // 带参数的get请求
+    axios.get('http://127.0.0.1:8866/user/findById', {
+        params: {
+            id: 2
+        }
+    }).then(function (response) {
+        console.log('带参数的get请求');
+        console.log(response);
+    }).catch(function (error) {
+        console.log('带参数的get请求');
+        console.log(error);
+    });
+</script>
+</body>
+</html>
