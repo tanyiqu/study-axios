@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+
+    <script>
+        console.log('请求');
+
+        axios.get('http://127.0.0.1:8866/array/post', {
+            params: {
+                ids: [1, 2, 3],
+                type: 1
+            },
+            paramsSerializer: params => {
+                return qs.stringify(params, {
+                    indices: false
+                })
+            }
+        })
+    </script>
+
+</body>
+
+</html>
